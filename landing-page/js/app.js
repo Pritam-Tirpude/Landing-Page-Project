@@ -18,6 +18,8 @@
  *
  */
 const sectionElement = document.querySelectorAll("section");
+const ulElement = document.querySelector("#navbar__list");
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -32,7 +34,6 @@ const sectionElement = document.querySelectorAll("section");
 
 // build the nav
 for (const sectiondata of sectionElement) {
-  const ulElement = document.querySelector("#navbar__list");
 
   const sectionId = sectiondata.id;
   const sectionDataNav = sectiondata.dataset.nav;
@@ -53,18 +54,24 @@ for (const sectiondata of sectionElement) {
 }
 
 //Add class 'active' to section when near top of viewport
-window.addEventListener("scroll", () => {
-  sectionElement.forEach((section) => {
-    let view = Math.floor(section.getBoundingClientRect().top);
-    if (view) {
-      section.classList.remove("active");
-      section.style.background = "none";
-    } else {
-      section.classList.add("active");
-      section.style.background = "cadetblue";
-    }
+if (!!window.IntersectionObserver) {
+  let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        sectionElement.forEach((section) => {
+          if (section.id === entry.target.id) {
+            section.classList.add("nav__highlight");
+          } else {
+            section.classList.remove("nav__highlight");
+          }
+        });
+      }
+    });
   });
-});
+  sectionElement.forEach((section) => {
+    observer.observe(section);
+  });
+}
 
 // Top button variable
 const topBtn = document.querySelector(".top-btn");
