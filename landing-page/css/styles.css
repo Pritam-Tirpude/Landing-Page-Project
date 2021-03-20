@@ -92,6 +92,10 @@ section {
   background-color: teal;
 }
 
+.section__highlight {
+  background: cornflowerblue;
+}
+
 /* Header Styles */
 .page__header {
   background: #fff;
