@@ -53,6 +53,9 @@ for (const sectiondata of sectionElement) {
   });
 }
 
+// An instance to store all anchor tags
+const navLinks = document.querySelectorAll("a");
+
 //Add class 'active' to section when near top of viewport
 if (!!window.IntersectionObserver) {
   let observer = new IntersectionObserver((entries, observer) => {
@@ -61,6 +64,13 @@ if (!!window.IntersectionObserver) {
         sectionElement.forEach((section) => {
           if (section.id === entry.target.id) {
             section.classList.add("nav__highlight");
+             for (const links of navLinks) {
+              if (links.id === entry.target.id) {
+                links.classList.add("nav__highlight");
+              } else {
+                links.classList.remove("nav__highlight");
+              }
+            }
           } else {
             section.classList.remove("nav__highlight");
           }
