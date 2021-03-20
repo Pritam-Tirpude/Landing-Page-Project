@@ -2,12 +2,25 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+- Project Overview
+- Directory Structure
 
-## Instructions
+## Project Overview
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+---
 
-To get started, open `js/app.js` and start building out the app's functionality
+This project is the part of a Front-end Nanodegree programme by [Udacity](https://www.udacity.com/).
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+The project is about to have a _Landing Page_ using _HTML_, _CSS_, & _JavaScript_. The requirement for this project is that when user clicks on the **nav** links it should jump on the particular section of that link and the links should be populated using _JavaScript_ and also highlight that section using _JavaScript_.
+
+## Directory Structure
+
+---
+
+📦landing-page
+┣ 📂css
+┃ ┗ 📜styles.css
+┣ 📂js
+┃ ┗ 📜app.js
+┣ 📜index.html
+┗ 📜README.md
