@@ -63,7 +63,7 @@ if (!!window.IntersectionObserver) {
       if (entry.isIntersecting) {
         sectionElement.forEach((section) => {
           if (section.id === entry.target.id) {
-            section.classList.add("nav__highlight");
+            section.classList.add("section__highlight");
              for (const links of navLinks) {
               if (links.id === entry.target.id) {
                 links.classList.add("nav__highlight");
@@ -72,7 +72,7 @@ if (!!window.IntersectionObserver) {
               }
             }
           } else {
-            section.classList.remove("nav__highlight");
+            section.classList.remove("section__highlight");
           }
         });
       }
